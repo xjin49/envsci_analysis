@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Lecture_2_install_python_windows/">
+        <link rel="prev" href="../Week_2_install_python_mac/">
       
       
-        <link rel="next" href="../Lecture_2_install_python_amarel/">
+        <link rel="next" href="../Week_3_Core_Python/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Week 2 Install Python Mac - Environmental Science Analysis</title>
+        <title>Week 2 Install Python Amarel - Environmental Science Analysis</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-mamba-and-python-mac-user" class="md-skip">
+        <a href="#install-mamba-and-python-amarel-user" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Week 2 Install Python Mac
+              Week 2 Install Python Amarel
             
           </span>
         </div>
@@ -274,11 +274,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture_2_install_python_windows/" class="md-nav__link">
+      <a href="../Week_2_install_python_windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Week 2 Install Python Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_2_install_python_mac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 Install Python Mac
   </span>
   
 
@@ -308,7 +329,7 @@
         
   
   <span class="md-ellipsis">
-    Week 2 Install Python Mac
+    Week 2 Install Python Amarel
   </span>
   
 
@@ -326,53 +347,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Lecture_2_install_python_amarel/" class="md-nav__link">
+      <a href="../Week_3_Core_Python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Week 2 Install Python Amarel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture_3_Core_Python/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lecture 3 Core Python Language
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Lecture_3_GitHub.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Week 4 Working with tabular data in Python
+    Week 3 Core Python Language
   </span>
   
 
@@ -422,21 +401,27 @@
                   
 
 
-<h1 id="install-mamba-and-python-mac-user">Install Mamba and Python: Mac User</h1>
+<h1 id="install-mamba-and-python-amarel-user">Install Mamba and Python: Amarel User</h1>
 <ul>
 <li>
-<p>Open Terminal (Launchpad -&gt; Other -&gt; Terminal)</p>
+<p>Request Amarel Account from <a href="https://oarc.rutgers.edu/amarel-cluster-access-request/">Rutgers Office of Advanced Computing</a></p>
+</li>
+<li>
+<p>Connect to <a href="https://ondemand.hpc.rutgers.edu/">Amarel Open OnDemand</a> <br></p>
+</li>
+<li>Click Clusters <br></li>
+<li>Choose Amarel Cluster Shell Access <br></li>
+<li>Enter your password <br></li>
+<li>
+<p>In the terminal, do the following commands (one line each time). If you're using Windows, type 'Ctrl+c' to copy and 'Ctrl+Shift+v' to paste command. <br></p>
 </li>
 <li>
 <p>Install <a href="https://github.com/conda-forge/miniforge">Miniforge</a> using: </p>
 </li>
 </ul>
-<pre><code>curl -L -O &quot;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh&quot;
+<pre><code>wget &quot;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh&quot;
 bash Miniforge3-$(uname)-$(uname -m).sh
 </code></pre>
-<ul>
-<li>Install Mamba on your laptop:</li>
-</ul>
 <pre><code>    Agree license term: yes 
     Confirm install location: ENTER
     Do you wish to update your shell profile to automatically initialize conda: yes
@@ -451,32 +436,35 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 ....
 </code></pre>
 <ul>
-<li>In the terminal, create a new environment <code>esa_env</code>: </li>
+<li>Create a new environment <code>esa_env</code>: </li>
 </ul>
-<pre><code>mamba create -n esa_env python=3.9 jupyter jupyterlab notebook numpy scipy ipython pandas matplotlib cartopy geopandas xarray dask netCDF4 seaborn statsmodels pooch
-</code></pre>
-<ul>
-<li>After it's finished, activate the environment: </li>
-</ul>
-<pre><code>mamba activate esa_env
-</code></pre>
-<ul>
-<li>Invoke Jupyter Lab: </li>
-</ul>
-<pre><code>jupyter lab
+<pre><code>mamba create -n esa_env python=3.9 jupyter jupyterlab notebook numpy scipy ipython pandas matplotlib cartopy geopandas xarray dask netCDF4 seaborn statsmodels 
 </code></pre>
 <ul>
 <li>
-<p>You should see Jupyter lab page automatically opened in your web browser. If not, copy and paste one of the URLs listed to your web browser.</p>
+<p>Next, go back to Amarel Open OnDemand. This time, we will launch a personal jupyter. Click on 'Interactive Apps', choose 'Personal Jupyter'. <br></p>
 </li>
 <li>
-<p>In the Jupyter Lab, go to <strong>File</strong> -&gt; <strong>Open from Path</strong>. Enter the path of your course folder. </p>
+<p>Settings for Personal Jupyter: <br></p>
+</li>
+</ul>
+<pre><code>    Number of hours: 10 
+    Number of cores: 1 
+    Gigabytes of memory: 10 
+    Partition: main
+    Leave Reservation and slurm feature blank 
+    conda path: /home/YOURNETID/miniforge3
+    conda environment: esa_env
+</code></pre>
+<ul>
+<li>
+<p>You should see Jupyter lab page automatically opened in your web browser. </p>
 </li>
 <li>
-<p>If you don't know the folder path, find the folder in <strong>Finder</strong>, right click on the folder, press <strong>Option</strong>, and click <strong>Copy "environmental_science_analysis" as Pathname</strong>. </p>
+<p>In the Jupyter Lab, go to <strong>File</strong> -&gt; <strong>Open from Path</strong>. Enter the path of your home folder: /home/YOURNETID/</p>
 </li>
 <li>
-<p>Once you're at your course folder, open a new Jupyter notebook by clicking the <strong>+</strong> sign. Choose Notebook. </p>
+<p>Once you're at your home folder, open a new Jupyter notebook by clicking the <strong>+</strong> sign. Choose Notebook. </p>
 </li>
 <li>
 <p>Rename the Notebook to be 'Lecture_2_Install_Python.ipynb'</p>
@@ -493,7 +481,7 @@ import geopandas as gpd
 <pre><code>ds = xr.tutorial.load_dataset(&quot;air_temperature&quot;)
 ds.air[0,:,:].plot()
 </code></pre>
-<p>-Submit this Jupyter Notebook as your assignment. </p>
+<p>-Download and submit this Notebook as your assignment. </p>
 
 
 
