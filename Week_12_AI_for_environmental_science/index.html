@@ -1,0 +1,1128 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Week_11_Geopandas/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Week 12 Environmental Sciences Packages in Python - Environmental Science Analysis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assignment-exploring-ai-for-environmental-science" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Environmental Science Analysis" class="md-header__button md-logo" aria-label="Environmental Science Analysis" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Environmental Science Analysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Week 12 Environmental Sciences Packages in Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Environmental Science Analysis" class="md-nav__button md-logo" aria-label="Environmental Science Analysis" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Environmental Science Analysis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Syllabus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lectures
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Lectures
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_2_install_python_windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 Install Python Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_2_install_python_mac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 Install Python Mac
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_2_install_python_amarel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 2 Install Python Amarel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_3_Core_Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 3 Core Python Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_4_Numpy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 4: Scientific Computing in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_5_Pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 5: Working with Tabular Data in Python with Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_5_install_jupyter_ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 5 Install Jupyter AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_6_Correlation_Regression_Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 6: Correlation and Regressions in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_7_Time_Series_Analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 7: Time series analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_8_Environmental_Data_Visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 8: Environmental data visualization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_9_Xarray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 9: Xarray for multidimensional gridded data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_10_Cartopy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 10: Making Maps in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week_11_Geopandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Week 11: Spatial Analysis in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Week 12 Environmental Sciences Packages in Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Week 12 Environmental Sciences Packages in Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your Task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Courses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ai-prompting-for-everyone-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. AI Prompting for Everyone — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-generative-ai-for-everyone-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Generative AI for Everyone — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai-for-everyone-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. AI for Everyone — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ai-for-good-robert-monarch" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. AI for Good — Robert Monarch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-chatgpt-prompt-engineering-for-developers-isa-fulford-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ChatGPT Prompt Engineering for Developers — Isa Fulford &amp; Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-build-with-andrew-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Build with Andrew — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-agentic-ai-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Agentic AI — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Submit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What to Submit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-courses-completed" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Course(s) Completed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-three-things-you-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Three Things You Learned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-environmental-science-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Environmental Science Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-complete-a-course-assignment-or-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Complete a Course Assignment or Exercise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your Task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Courses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ai-prompting-for-everyone-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. AI Prompting for Everyone — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-generative-ai-for-everyone-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Generative AI for Everyone — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ai-for-everyone-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. AI for Everyone — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ai-for-good-robert-monarch" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. AI for Good — Robert Monarch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-chatgpt-prompt-engineering-for-developers-isa-fulford-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ChatGPT Prompt Engineering for Developers — Isa Fulford &amp; Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-build-with-andrew-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Build with Andrew — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-agentic-ai-andrew-ng" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Agentic AI — Andrew Ng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-to-submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Submit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What to Submit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-courses-completed" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Course(s) Completed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-three-things-you-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Three Things You Learned
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-environmental-science-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Environmental Science Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-complete-a-course-assignment-or-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Complete a Course Assignment or Exercise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="assignment-exploring-ai-for-environmental-science">Assignment: Exploring AI for Environmental Science</h1>
+<p>Artificial intelligence is becoming increasingly important in environmental science, from data analysis and coding to modeling, visualization, remote sensing, literature review, and scientific communication. At the same time, AI is developing so quickly that it is difficult for any of us to keep up with all of the new tools and methods.</p>
+<p>I am not an AI expert myself, so rather than trying to teach you AI entirely from my own perspective, I would like us to learn from some of the leaders in the field. In particular, <strong>Andrew Ng</strong> has been one of the most influential educators in artificial intelligence and machine learning, and DeepLearning.AI offers a number of high-quality courses taught by him and other experts.</p>
+<p>For this assignment, you will choose the AI topics that are most relevant to your own interests and spend one week exploring them. The goal is not to become an AI expert in a few days, but to gain a practical understanding of what current AI tools can do and to begin thinking about how they might be useful in environmental science.</p>
+<h2 id="your-task">Your Task</h2>
+<p>Visit the <strong><a href="https://www.deeplearning.ai/courses">DeepLearning.AI course catalog</a></strong>.</p>
+<p>Choose <strong>one course or a combination of short courses</strong> from the recommended list below. Spend approximately <strong>3–5 hours during this week</strong> learning about AI.</p>
+<p>You do <strong>not</strong> need to complete a long course in its entirety. For longer courses, complete the portions that are most relevant to your interests.</p>
+<h2 id="recommended-courses">Recommended Courses</h2>
+<h3 id="1-ai-prompting-for-everyone-andrew-ng">1. <a href="https://www.deeplearning.ai/courses/ai-prompting-for-everyone">AI Prompting for Everyone</a> — Andrew Ng</h3>
+<p><strong>Level:</strong> Beginner<br />
+<strong>Length:</strong> ~3 hours</p>
+<p>Learn how to communicate effectively with modern AI systems, find information, conduct research, brainstorm, write, analyze data, and work with multimedia and code.</p>
+<p><strong>Recommended for:</strong> Everyone, particularly students who want to use AI as a research and analysis assistant.</p>
+<hr />
+<h3 id="2-generative-ai-for-everyone-andrew-ng">2. <a href="https://www.deeplearning.ai/courses/generative-ai-for-everyone">Generative AI for Everyone</a> — Andrew Ng</h3>
+<p><strong>Level:</strong> Beginner<br />
+<strong>Length:</strong> ~5 hours</p>
+<p>Learn what generative AI and large language models are, what they can and cannot do, and how they can be used responsibly.</p>
+<p><strong>Recommended for:</strong> Students who want a broad understanding of modern generative AI without much programming.</p>
+<hr />
+<h3 id="3-ai-for-everyone-andrew-ng">3. <a href="https://www.deeplearning.ai/courses/ai-for-everyone">AI for Everyone</a> — Andrew Ng</h3>
+<p><strong>Level:</strong> Beginner<br />
+<strong>Length:</strong> ~7 hours</p>
+<p>A broader introduction to artificial intelligence, machine learning, data science, AI project workflows, and the societal impacts of AI.</p>
+<p><strong>Recommended for:</strong> Students who have little previous exposure to AI and want to understand the basic concepts behind it.</p>
+<hr />
+<h3 id="4-ai-for-good-robert-monarch">4. <a href="https://www.deeplearning.ai/specializations/ai-for-good">AI for Good</a> — Robert Monarch</h3>
+<p><strong>Level:</strong> Beginner<br />
+<strong>Full program:</strong> ~38 hours</p>
+<p>Explore how AI and machine learning can be applied to real-world societal and environmental problems. Topics include:</p>
+<ul>
+<li>Air-quality monitoring</li>
+<li>Climate change and wind-energy modeling</li>
+<li>Biodiversity monitoring</li>
+<li>Disaster management and damage assessment</li>
+</ul>
+<p><strong>Recommended for:</strong> Environmental science students who want to see how AI can be applied directly to environmental and sustainability problems.</p>
+<p>For this assignment, you are <strong>not expected to complete the full program</strong>. Select approximately <strong>3–5 hours of material</strong> from the topics most relevant to your interests.</p>
+<hr />
+<h3 id="5-chatgpt-prompt-engineering-for-developers-isa-fulford-andrew-ng">5. <a href="https://www.deeplearning.ai/courses/chatgpt-prompt-eng">ChatGPT Prompt Engineering for Developers</a> — Isa Fulford &amp; Andrew Ng</h3>
+<p><strong>Level:</strong> Beginner<br />
+<strong>Length:</strong> ~1.5 hours</p>
+<p>Learn systematic approaches for prompting large language models to summarize, extract information, transform text, classify information, and build simple AI-powered workflows.</p>
+<p><strong>Recommended for:</strong> Students interested in using AI more systematically for research, data analysis, or automated workflows.</p>
+<p>Because this course is relatively short, combine it with another short course if needed to reach approximately 3 hours.</p>
+<hr />
+<h3 id="6-build-with-andrew-andrew-ng">6. <a href="https://www.deeplearning.ai/courses/build-with-andrew">Build with Andrew</a> — Andrew Ng</h3>
+<p><strong>Level:</strong> Beginner<br />
+<strong>Length:</strong> ~1 hour</p>
+<p>Learn how AI can help you build a simple working application even without extensive programming experience.</p>
+<p><strong>Recommended for:</strong> Students interested in developing simple environmental tools, interactive applications, calculators, dashboards, or educational tools.</p>
+<p>Because this course is short, combine it with another course.</p>
+<hr />
+<h3 id="7-agentic-ai-andrew-ng">7. <a href="https://www.deeplearning.ai/courses/agentic-ai">Agentic AI</a> — Andrew Ng</h3>
+<p><strong>Level:</strong> Intermediate<br />
+<strong>Length:</strong> ~8 hours</p>
+<p>Learn how AI systems can perform multi-step tasks using reflection, tool use, planning, and multi-agent workflows.</p>
+<p><strong>Recommended for:</strong> Students who want to explore more advanced AI applications, such as automated environmental data analysis or research workflows.</p>
+<p>For this assignment, complete approximately <strong>3–5 hours</strong> of the course.</p>
+<h2 id="what-to-submit">What to Submit</h2>
+<p>Use the provided Word template and submit a short reflection of approximately <strong>1–2 pages</strong> covering the following four items.</p>
+<h3 id="1-courses-completed">1. Course(s) Completed</h3>
+<p>Provide:</p>
+<ul>
+<li>Course title(s)</li>
+<li>Instructor(s)</li>
+<li>Modules or sections completed</li>
+<li>Approximately how much time you spent</li>
+</ul>
+<h3 id="2-three-things-you-learned">2. Three Things You Learned</h3>
+<p>Briefly describe <strong>three concepts, techniques, or tools</strong> that were new or particularly useful to you.</p>
+<h3 id="3-environmental-science-application">3. Environmental Science Application</h3>
+<p>Describe <strong>one specific environmental science problem</strong> where something you learned could be useful.</p>
+<p>Possible examples include:</p>
+<ul>
+<li>Air-quality analysis</li>
+<li>Climate or weather data</li>
+<li>Water-quality monitoring</li>
+<li>Remote sensing and satellite imagery</li>
+<li>Ecological or biodiversity data</li>
+<li>Environmental health</li>
+<li>Environmental modeling</li>
+<li>Pollution source identification</li>
+<li>Environmental literature review</li>
+<li>Data visualization and communication</li>
+</ul>
+<h3 id="4-complete-a-course-assignment-or-exercise">4. Complete a Course Assignment or Exercise</h3>
+<p>Complete <strong>at least one assignment, quiz, lab, code exercise, project, or other hands-on activity</strong> associated with the module(s) you studied.</p>
+<p>Briefly report:</p>
+<ul>
+<li>Which assignment or exercise you completed</li>
+<li>What the task asked you to do</li>
+<li>What you learned from completing it</li>
+</ul>
+<p>Some DeepLearning.AI graded assignments require a Pro/paid subscription. You are not required to pay for this assignment. If the graded activity in your chosen module is not freely accessible, complete an available code example, lab demonstration, hands-on activity, or similar exercise from the module instead.</p>
+<h2 id="grading">Grading</h2>
+<p>This assignment is graded primarily on engagement and thoughtful reflection, not on previous programming or AI experience.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align: right;">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completion of AI learning activities</td>
+<td style="text-align: right;">30%</td>
+</tr>
+<tr>
+<td>Three key lessons learned</td>
+<td style="text-align: right;">20%</td>
+</tr>
+<tr>
+<td>Environmental science application</td>
+<td style="text-align: right;">20%</td>
+</tr>
+<tr>
+<td>Completion and discussion of a course assignment/exercise</td>
+<td style="text-align: right;">30%</td>
+</tr>
+</tbody>
+</table>
+<p>The purpose of this assignment is not to make you an AI expert in one week. The goal is to become familiar with current AI capabilities and begin thinking about how these tools can be used thoughtfully in environmental science.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Xiaomeng Jin
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.highlight", "content.code.no-copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
